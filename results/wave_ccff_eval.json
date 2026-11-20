@@ -1,0 +1,26 @@
+{
+  "config": "configs/rtdetr/rtdetr_r18vd_visdrone_wave_ccff.yml",
+  "checkpoint": "/kaggle/working/submission_artifacts/wave_ccff_best.pth",
+  "weight_source": "ema",
+  "AP": 17.92,
+  "AP50": 29.31,
+  "AP75": 18.08,
+  "APS": 10.13,
+  "APM": 27.35,
+  "APL": 49.05,
+  "AR100": 27.06,
+  "raw_coco_stats": [
+    17.915,
+    29.307,
+    18.077,
+    10.129,
+    27.347,
+    49.046,
+    8.733,
+    21.92,
+    27.064,
+    17.328,
+    40.195,
+    63.806
+  ]
+}

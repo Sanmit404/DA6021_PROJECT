@@ -1,0 +1,17 @@
+{
+  "parseval_relative_error": 1.420753768171154e-16,
+  "idwt_max_reconstruction_error": 8.881784197001252e-16,
+  "nearest_vs_degenerate_haar_diff": 0.0,
+  "baseline_params_M": 20.0946,
+  "wave_ccff_params_M": 20.3698,
+  "delta_params_M": 0.2752,
+  "pretrained_keys_matched": "533/533",
+  "optimizer_groups_wave": 6,
+  "wave_tensors_verified_nonzero_grad": 32,
+  "sample_train_loss": 18.0878,
+  "deploy_output_boxes_shape": [
+    2,
+    300,
+    4
+  ]
+}

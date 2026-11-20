@@ -1,0 +1,12 @@
+{
+  "best_stat": {
+    "epoch": 12,
+    "coco_eval_bbox": 0.17923306391133406
+  },
+  "epochs_completed": 13,
+  "last_epoch": 12,
+  "n_parameters": 20369784,
+  "total_time_sec": 3637.57,
+  "total_time_str": "1:00:37",
+  "wall_minutes": 60.93
+}

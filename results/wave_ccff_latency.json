@@ -1,0 +1,11 @@
+{
+  "config": "configs/rtdetr/rtdetr_r18vd_visdrone_wave_ccff.yml",
+  "device": "Tesla T4",
+  "fp16": true,
+  "img_size": 640,
+  "params_M": 20.37,
+  "params_exact_M": 20.3698,
+  "deployed_params_M": 22.14,
+  "latency_ms": 26.13,
+  "fps": 38.3
+}

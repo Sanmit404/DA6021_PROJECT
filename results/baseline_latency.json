@@ -1,0 +1,11 @@
+{
+  "config": "configs/rtdetr/rtdetr_r18vd_visdrone_baseline.yml",
+  "device": "Tesla T4",
+  "fp16": true,
+  "img_size": 640,
+  "params_M": 20.09,
+  "params_exact_M": 20.0946,
+  "deployed_params_M": 21.87,
+  "latency_ms": 22.35,
+  "fps": 44.7
+}

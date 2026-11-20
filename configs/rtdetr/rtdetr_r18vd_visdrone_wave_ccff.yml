@@ -1,0 +1,103 @@
+__include__: [
+  '../dataset/visdrone_detection.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr_r50vd.yml',
+]
+
+output_dir: ./output/rtdetr_r18vd_visdrone_wave_ccff
+
+use_amp: True
+sync_bn: False
+checkpoint_freq: 100
+epoches: 15
+
+ema:
+  type: ModelEMA
+  decay: 0.999
+  warmups: 200
+
+RTDETR:
+  backbone: PResNet
+  encoder: WaveHybridEncoder
+  decoder: RTDETRTransformer
+
+PResNet:
+  depth: 18
+  freeze_at: -1
+  freeze_norm: False
+  pretrained: False
+
+WaveHybridEncoder:
+  in_channels: [128, 256, 512]
+  feat_strides: [8, 16, 32]
+  hidden_dim: 256
+  use_encoder_idx: [2]
+  num_encoder_layers: 1
+  nhead: 8
+  dim_feedforward: 1024
+  dropout: 0.
+  enc_act: 'gelu'
+  expansion: 0.5
+  depth_mult: 1
+  act: 'silu'
+  version: v1
+  wave_reduction: 4
+  wave_init_scale: 0.05
+
+RTDETRTransformer:
+  num_layers: 3
+
+train_dataloader:
+  dataset:
+    transforms:
+      ops:
+        - {type: Resize, size: [640, 640]}
+        - {type: RandomHorizontalFlip}
+        - {type: RandomPhotometricDistort, p: 0.3}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  collate_fn:
+    scales: [576, 608, 640, 640, 640, 672]
+  total_batch_size: 32
+  num_workers: 2
+
+val_dataloader:
+  total_batch_size: 32
+  num_workers: 2
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      weight_decay: 0.
+      lr: 0.00002
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.00002
+    -
+      params: '^(?=.*(?:wave_topdown|wave_downsample))(?=.*(?:norm|bn|bias|gamma|beta)).*$'
+      weight_decay: 0.
+      lr: 0.0003
+    -
+      params: '^(?=.*(?:wave_topdown|wave_downsample))(?!.*(?:norm|bn|bias|gamma|beta)).*$'
+      lr: 0.0003
+    -
+      params: '^(?=.*(?:encoder|decoder))(?!.*(?:wave_topdown|wave_downsample))(?=.*(?:norm|bn|bias)).*$'
+      weight_decay: 0.
+
+  lr: 0.0002
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+
+lr_scheduler:
+  type: MultiStepLR
+  milestones: [11]
+  gamma: 0.1
+
+lr_warmup_scheduler:
+  type: LinearWarmup
+  warmup_duration: 200

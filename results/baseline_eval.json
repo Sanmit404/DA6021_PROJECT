@@ -1,0 +1,26 @@
+{
+  "config": "configs/rtdetr/rtdetr_r18vd_visdrone_baseline.yml",
+  "checkpoint": "/kaggle/working/submission_artifacts/baseline_best.pth",
+  "weight_source": "ema",
+  "AP": 18.49,
+  "AP50": 30.16,
+  "AP75": 18.71,
+  "APS": 10.56,
+  "APM": 28.03,
+  "APL": 53.45,
+  "AR100": 27.62,
+  "raw_coco_stats": [
+    18.49,
+    30.162,
+    18.71,
+    10.561,
+    28.028,
+    53.452,
+    8.818,
+    22.414,
+    27.623,
+    17.785,
+    40.737,
+    65.155
+  ]
+}

@@ -1,0 +1,24 @@
+# Python / Virtual Environments
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Datasets & Heavy Local Scratch
+dataset/
+output/
+outputs/
+pretrained/
+kaggle_extracted/
+results(1).zip
+Overleaf_Upload_Wave_CCFF.zip
+*.pth
+*.onnx
+
+# Local Scratch / Internal Helper Files
+SKILL.md
+TeamName_26_DLCV_Project_Report.zip
+kaggle_wave_ccff_2_5hr.ipynb
+kaggle_wave_ccff_4hr.ipynb
+tools/build_kaggle_notebooks.py
+tools/splice_kaggle_outputs.py

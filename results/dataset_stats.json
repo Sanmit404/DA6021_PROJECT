@@ -1,0 +1,16 @@
+{
+  "train": {
+    "split": "VisDrone2019-DET-train",
+    "num_images": 6471,
+    "num_annotations": 343197,
+    "small_obj_ratio": 0.6047,
+    "out_json": "/tmp/da6021_wave_rtdetr/visdrone/annotations/instances_train.json"
+  },
+  "val": {
+    "split": "VisDrone2019-DET-val",
+    "num_images": 548,
+    "num_annotations": 38759,
+    "small_obj_ratio": 0.6856,
+    "out_json": "/tmp/da6021_wave_rtdetr/visdrone/annotations/instances_val.json"
+  }
+}

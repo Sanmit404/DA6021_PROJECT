@@ -1,0 +1,16 @@
+{
+  "python": "3.13.16",
+  "pytorch": "2.11.0+cu130",
+  "torchvision": "0.26.0+cu130",
+  "cuda_version": "13.0",
+  "num_gpus": 2,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "vram_gb": [
+    14.56,
+    14.56
+  ],
+  "cpu_count": 4
+}
