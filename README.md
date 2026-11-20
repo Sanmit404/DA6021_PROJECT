@@ -31,8 +31,8 @@ We introduce **`Wave-CCFF`** ([`src/zoo/rtdetr/wave_hybrid_encoder.py`](./src/zo
 
 ### Exact Installation Commands
 ```bash
-git clone https://github.com/avneesh10115/wave-ccff-rtdetr.git
-cd wave-ccff-rtdetr
+git clone https://github.com/Sanmit404/DA6021_PROJECT.git
+cd DA6021_PROJECT
 
 python -m venv .venv
 # Linux / macOS:
@@ -182,8 +182,8 @@ Evaluated on **VisDrone2019-DET `val`** (`548` images, `38,759` instances, `68.5
 
 | Method | Config | $\text{AP}_{50:95}$ | $\text{AP}_{50}$ | $\text{AP}_{75}$ | $\text{AP}_S$ | $\text{AP}_M$ | $\text{AP}_L$ | Params (M) | T4 FP16 Latency (ms) | FPS | Checkpoint & Log |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Baseline (`RT-DETR-R18`) | [`rtdetr_r18vd_visdrone_baseline.yml`](./configs/rtdetr/rtdetr_r18vd_visdrone_baseline.yml) | **18.49** | **30.16** | **18.71** | **10.56** | **28.03** | **53.45** | **20.09** | **22.35** | **44.7** | [baseline_best.pth](https://github.com/avneesh10115/wave-ccff-rtdetr/releases/download/v1.0/baseline_best.pth) / [log](./results/baseline_log.txt) |
-| **Ours (`Wave-CCFF RT-DETR-R18`)** | [`rtdetr_r18vd_visdrone_wave_ccff.yml`](./configs/rtdetr/rtdetr_r18vd_visdrone_wave_ccff.yml) | 17.92 | 29.31 | 18.08 | 10.13 | 27.35 | 49.05 | 20.37 | 26.13 | 38.3 | [wave_ccff_best.pth](https://github.com/avneesh10115/wave-ccff-rtdetr/releases/download/v1.0/wave_ccff_best.pth) / [log](./results/wave_ccff_log.txt) |
+| Baseline (`RT-DETR-R18`) | [`rtdetr_r18vd_visdrone_baseline.yml`](./configs/rtdetr/rtdetr_r18vd_visdrone_baseline.yml) | **18.49** | **30.16** | **18.71** | **10.56** | **28.03** | **53.45** | **20.09** | **22.35** | **44.7** | [baseline_best.pth](https://github.com/Sanmit404/DA6021_PROJECT/releases/download/v1.0/baseline_best.pth) / [log](./results/baseline_log.txt) |
+| **Ours (`Wave-CCFF RT-DETR-R18`)** | [`rtdetr_r18vd_visdrone_wave_ccff.yml`](./configs/rtdetr/rtdetr_r18vd_visdrone_wave_ccff.yml) | 17.92 | 29.31 | 18.08 | 10.13 | 27.35 | 49.05 | 20.37 | 26.13 | 38.3 | [wave_ccff_best.pth](https://github.com/Sanmit404/DA6021_PROJECT/releases/download/v1.0/wave_ccff_best.pth) / [log](./results/wave_ccff_log.txt) |
 | **$\Delta$ (Ours − Baseline)** | — | -0.57 | -0.85 | -0.63 | -0.43 | -0.68 | -4.40 | +0.28 | +3.78 | -6.4 | [CSV](./results/comparison_table.csv) / [JSON](./results/final_results.json) |
 
 ### Empirical Analysis & Curves
